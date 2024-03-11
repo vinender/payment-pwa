@@ -9,8 +9,11 @@ import Screen1 from './components/screen1';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    {/* <App /> */}
+        <QueryClientProvider>
+            {/* <App /> */}
     <Screen1/>
+        </QueryClientProvider>
+   
   </React.StrictMode>
 );
 
