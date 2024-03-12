@@ -2,19 +2,21 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import * as serviceWorkerRegistration from './serviceWorkerRegistration';  // Import the service worker registration module
+import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 import Screen1 from './components/screen1';
+import { QueryClient, QueryClientProvider } from 'react-query';
+
+const queryClient = new QueryClient(); // Define queryClient here
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-        <QueryClientProvider>
-            {/* <App /> */}
-    <Screen1/>
-        </QueryClientProvider>
-   
-  </React.StrictMode>
+    <QueryClientProvider client={queryClient}>
+      {/* <App /> */}
+      <Screen1 />
+    </QueryClientProvider>
+  </React.StrictMode>,
 );
 
 // Register the service worker
