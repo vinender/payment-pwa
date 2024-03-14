@@ -7,11 +7,25 @@ module.exports = {
   ],
   theme: {
     extend: {
+      typography: (theme) => ({
+        'h1': {
+          css: {
+            fontFamily: 'Poppins',
+            fontWeight: '600',
+            fontSize: '16px',
+            lineHeight: '24px',
+          },
+        },
+      }),
+    
       colors: {
-        theme: '#720EF6',
-        light: '#BA99E5'
+        theme: '#6911D5',
+        light: '#705AE2'
         // Add more custom colors as needed
       },
+    },
+    fontFamily: {
+      poppins: ['Poppins', 'sans-serif'],
     },
   },
   plugins: [],
