@@ -3,9 +3,9 @@ import React, { useState } from 'react'
 import Card1 from './cards.js'
 import OverlappingButtons from './button.js';
 import Card2 from './card2.js';
- 
 
-export default function Screen1() {
+
+export default function Screen2() {
     const [isMonthly, setIsMonthly] = useState(true);
 
   const handleToggle = () => {
@@ -79,13 +79,11 @@ export default function Screen1() {
         </p>
         {/* </div> */}
 
-        {/* <Link to="/screen2"> */}
-             <button  style={{borderRadius: '32.5px'}} 
+        <button  style={{borderRadius: '32.5px'}} 
                  className='  font-semibold  p-4 mx-3  w-ull bg-white text-theme 
                             h-[58]'>
                         Continue
         </button>
-        {/* </Link> */}
       </div>
     // </div>
   );
