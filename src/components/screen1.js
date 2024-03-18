@@ -13,19 +13,16 @@ export default function Screen1() {
   };
 
   return (
-    <div className='relative bg-theme flex overflow-y-scroll py-10 text-gray-100 flex-col max-w-3xl mx-auto border space-y-5 h-screen'>
-      
-      <div className='    flex items-center w-full justify-between '>
-        <div className='flex items-center p-4 space-x-4'>
-          <img className='w-[16px] h-[16px]' src='/back.png' />
-          <p style={{ lineHeight: '24px' }} 
-             className='text-[14px]   whitespace-nowrap font-semibold font-poppins text-gray-50'>
-            return to ASA Vault</p>
-        </div>
-        {/* <div className='absolute'>  */}
-        <img className=' h-16 w-16 mx-6' src='/pwa.png' />
-        {/* </div> */}
-      </div>
+   <div className='relative bg-theme text-white flex flex-col max-w-3xl space-y-1 mx-auto h-screen'>
+  <div className='flex items-center justify-between p-4'>
+    <div className='flex items-center space-x-4'>
+      <img className='w-[16px] h-[16px]' src='/back.png' alt='Back' />
+      <p className='text-[14px] font-semibold font-poppins text-gray-50'>
+        Return to ASA Vault
+      </p>
+    </div>
+    <img className='w-[64px] h-[64px]' src='/pwa.png' alt='PWA' />
+  </div>
 
       <div className='mx-auto space-y-2  '>
 
@@ -35,15 +32,15 @@ export default function Screen1() {
 
               
 
-            <div className='flex flex-col space-y-4 mx-auto w-full'>
+            <div className='flex flex-col space-y-2 mx-auto w-full'>
                 <div className='  flex flex-col   items-center'>
-                    <strong className='text-3xl font-poppins'>$55.95</strong>
+                    <strong className='text-3xl text-white font-poppins'>$55.95</strong>
                     <p style={{ lineHeight: ' ' }} className='font-semibold text-[16px]'>
                         due today</p>
                          
                 </div>
 
-                <div className='  flex flex-col items-center justify-center mt-8 mx-2 sm:mx-auto'>
+                <div className='  flex flex-col items-center justify-center mt- mx-2 sm:mx-auto'>
                     <div className="flex items-center font-semibold text-gray-300 text-sm p-2 space-x-2">
                         <div className="bg-white/30 backdrop-blur-lg rounded-3xl overflow-hidden py-1">
                             <span style={{ lineHeight: '1.5' }} className={`rounded-3xl px-6 py-2 cursor-pointer text-[12px] sm:text-base transition-all duration-500 ${isMonthly ? 'bg-white/30 text-gray-50 transform z-10 text-[12px] relative' : 'bg-transparent text-gray-300'}`} onClick={handleToggle}>
@@ -56,7 +53,7 @@ export default function Screen1() {
                     </div>
                 </div>
 
-                <div className='   flex flex-col items-center'>
+                <div className='  mb-4 flex flex-col items-center'>
                     <strong className='text-3xl font-poppins'>$6.95</strong>
                     <p style={{ lineHeight: '28px' }} className='font-semibold text-[16px]'>due today</p>
                     <p className='font-semibold text-[16px]'>starting next month</p>
@@ -73,7 +70,7 @@ export default function Screen1() {
       <Card2/>
 
       {/* <div className='mx'> */}
-        <p className='  mx-auto   text-center text-sm font-poppins'>
+        <p className='  mx-auto w-1/2  text-center text-sm font-poppins'>
                The information provided will be shared with 
                Credit Rent Boost to help improve your credit score.
         </p>

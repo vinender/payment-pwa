@@ -4,9 +4,10 @@ const PaymentForm = () => {
   const [isCardSelected, setIsCardSelected] = React.useState(true);
 
   return (
-    <div className="relative flex flex-col items-center p-4 bg-theme h-screen">
-      <div className="flex flex-col h-full justify-between">
-        <div>
+    <div className="relative flex flex-col items-center bg-theme min-h-screen">
+    <div className="flex flex-col  justify-between flex- ">
+        {/* <div className='flex flex-col  justify-between flex-  '> */}
+
           <div className='flex items-center w-full justify-between '>
             <div className='flex items-center p-4 space-x-4'>
               <img className='w-[16px] h-[16px]' src='/back.png' />
@@ -40,7 +41,7 @@ const PaymentForm = () => {
             </div>
           </div>
   
-          <div className="bg- font-poppins rounded-lg p-4 w-full max-w-sm">
+          <div className="bg-  font-poppins rounded-lg p-4 w-full max-w-sm">
             <p className='text-[16px] font-poppins text-center text-gray-200 font-medium'>Payment information not shared.</p>
   
             {isCardSelected ? (
@@ -84,12 +85,13 @@ const PaymentForm = () => {
               placeholder="Signature"
             />
           </div>
-        </div>
+        {/* </div> */}
   
-        <button style={{borderRadius: '32.5px'}} 
-          className='font-semibold p-4 w-full bg-white text-theme h-[58px]'>
-          Submit
-        </button>
+        <button 
+      style={{ borderRadius: '32.5px' }} 
+      className='font-semibold p-4 w-full mx-auto bg-white text-theme sticky mt-20 bottom-0'>
+      Submit
+    </button>
       </div>
     </div>
   );

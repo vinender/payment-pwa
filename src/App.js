@@ -10,16 +10,16 @@ import Screen2 from './components/screen2';
 function App() {
   return (
     <div className="">
-     <Screen1 />
+     {/* <Screen1 /> */}
       <CreditRentBoost/>
-      <PaymentForm/>
-      <Screen2/>
+      {/* <PaymentForm/> */}
+      {/* <Screen2/> */}
     </div>
   );
 }
 
 export default App;
-
+// 
 
  
 
