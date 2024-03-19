@@ -13,7 +13,7 @@ export default function Screen1() {
   };
 
   return (
-   <div className='relative bg-theme text-white flex flex-col max-w-3xl space-y-1 mx-auto h-screen'>
+   <div className='relative bg-theme text-white flex flex-col max-w-3xl space-y-1 mx-auto '>
   <div className='flex items-center justify-between p-4'>
     <div className='flex items-center space-x-4'>
       <img className='w-[16px] h-[16px]' src='/back.png' alt='Back' />
@@ -29,8 +29,6 @@ export default function Screen1() {
         <div className='flex flex-col space-y-3 items-center justify-center '> 
             <p className='   text-center h-[24px] text-gray-100 font-semibold text-[20px] font-poppins'>
                 Your service summary.</p>
-
-              
 
             <div className='flex flex-col space-y-2 mx-auto w-full'>
                 <div className='  flex flex-col   items-center'>
@@ -61,31 +59,24 @@ export default function Screen1() {
             </div>
         </div>
 
-   
-
-
       </div>
 
       <Card1 />
       <Card2/>
 
       {/* <div className='mx'> */}
-        <p className='  mx-auto w-1/2  text-center text-sm font-poppins'>
+        <p className='w-[70%] mx-auto text-center text-sm font-poppins'>
                The information provided will be shared with 
                Credit Rent Boost to help improve your credit score.
         </p>
-        {/* </div> */}
-
-        {/* <Link to="/screen2"> */}
+       
              <button  style={{borderRadius: '32.5px'}} 
-                 className='  font-semibold  p-4 mx-3  w-ull bg-white text-theme 
+                 className='  font-semibold  p-4 mx-auto w-[80%] bg-white text-theme 
                             h-[58]'>
                         Continue
         </button>
-        {/* </Link> */}
-      </div>
-    // </div>
-  );
+       </div>
+   );
   
   
 }

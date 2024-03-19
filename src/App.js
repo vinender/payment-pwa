@@ -11,9 +11,9 @@ function App() {
   return (
     <div className="">
      {/* <Screen1 /> */}
-      <CreditRentBoost/>
+      {/* <CreditRentBoost/> */}
       {/* <PaymentForm/> */}
-      {/* <Screen2/> */}
+      <Screen2/>
     </div>
   );
 }

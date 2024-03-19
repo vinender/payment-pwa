@@ -63,7 +63,7 @@ const CreditRentBoost = () => {
       <p className="text-white font-poppins text-center mt-4">
         We will also provide a <br /> portal for you to log into <br /> and see real-time updates.
       </p>
-      <button className="fixed bottom-0 left-0 mx-auto w-full mb-4 ml- text-white font-bold py-2 px-4 rounded-full">
+      <button className="fixed bottom-0 left-0 mx-auto w-full mb-4  text-white font-bold py-2 px-4 rounded-full">
         Close
       </button>
     </div>

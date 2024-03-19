@@ -4,7 +4,7 @@ const PaymentForm = () => {
   const [isCardSelected, setIsCardSelected] = React.useState(true);
 
   return (
-    <div className="relative flex flex-col items-center bg-theme min-h-screen">
+    <div className="relative flex flex-col items-center w-full  bg-theme min-h-screen">
     <div className="flex flex-col  justify-between flex- ">
         {/* <div className='flex flex-col  justify-between flex-  '> */}
 
@@ -21,7 +21,7 @@ const PaymentForm = () => {
   
           <h2 className="text-white font-semibold font-poppins mt-10 text-[20px] mb-4">Improve my score!</h2>
           
-          <div className="flex bg-white/20 backdrop-blur-lg p-3 px-4 rounded-xl w-full justify-between items-center mb-4">
+          <div className="flex bg-white/20 backdrop-blur-lg p-3 px-4 rounded-xl w-[85%] mx-auto justify-between items-center mb-4">
             <span className="text-white font-poppins font-medium">Purchase Summary</span>
             <span className="text-white font-poppins font-medium">
               {isCardSelected ? '$98' : '$95.98'} 
@@ -89,7 +89,7 @@ const PaymentForm = () => {
   
         <button 
       style={{ borderRadius: '32.5px' }} 
-      className='font-semibold p-4 w-full mx-auto bg-white text-theme sticky mt-20 bottom-0'>
+      className='font-semibold p-4 w-[85%] mx-auto bg-white text-theme sticky mt-20 bottom-0'>
       Submit
     </button>
       </div>
