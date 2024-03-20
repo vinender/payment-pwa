@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const PaymentForm = () => {
   const [isCardSelected, setIsCardSelected] = React.useState(true);
@@ -86,12 +87,17 @@ const PaymentForm = () => {
             />
           </div>
         {/* </div> */}
-  
-        <button 
-      style={{ borderRadius: '32.5px' }} 
-      className='font-semibold p-4 w-[85%] mx-auto bg-white text-theme sticky mt-20 bottom-0'>
-      Submit
-    </button>
+        <Link
+  to="/credit-rent-boost"
+  className="block text-center"
+>
+  <button
+    style={{ borderRadius: '32.5px' }}
+    className="font-semibold p-4 w-[85%] mx-auto bg-white text-theme sticky mt-20 bottom-0"
+  >
+    Submit
+  </button>
+</Link>
       </div>
     </div>
   );

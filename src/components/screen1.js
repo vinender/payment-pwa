@@ -3,7 +3,8 @@ import React, { useState } from 'react'
 import Card1 from './cards.js'
 import OverlappingButtons from './button.js';
 import Card2 from './card2.js';
- 
+import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export default function Screen1() {
     const [isMonthly, setIsMonthly] = useState(true);
@@ -12,11 +13,17 @@ export default function Screen1() {
     setIsMonthly((prevIsMonthly) => !prevIsMonthly);
   };
 
+  const navigate = useNavigate();
+
+  const handleGoBack = () => {
+    navigate(-1); // Navigate to the previous page
+  };
+
   return (
    <div className='relative py-4 bg-theme text-white overflow-y-auto   scrollbar-hidden  flex flex-col h-screen  w-full space-y-1  lg:mx-auto '>
   <div className='flex items-center justify-between p-4'>
     <div className='flex items-center space-x-4'>
-      <img className='w-[16px] h-[16px]' src='/back.png' alt='Back' />
+      <img onClick={handleGoBack} className=' cursor-pointer w-[16px] h-[16px]' src='/back.png' alt='Back' />
       <p className='text-[14px] font-semibold font-poppins text-gray-50'>
         return to ASA Vault
       </p>
@@ -72,11 +79,13 @@ export default function Screen1() {
         </p>
         {/* </div> */}
 
-        <button  style={{borderRadius: '32.5px'}} 
-                 className='  font-semibold sm:w-[60%] md:w-[35%] lg:w-[20%] w-[80%] p-4 mx-auto  w-ull bg-white text-theme 
-                            h-[58]'>
-                        Continue
-        </button>
+        <Link
+          to="/screen2"
+          style={{ borderRadius: '32.5px' }}
+          className="font-semibold sm:w-[60%] md:w-[35%] text-center lg:w-[20%] w-[80%] p-4 mx-auto w-ull bg-white text-theme h-[58]"
+        >
+          Continue
+        </Link>
        </div>
    );
   
