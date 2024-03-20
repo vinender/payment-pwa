@@ -9,11 +9,11 @@ import Screen2 from './components/screen2';
 
 function App() {
   return (
-    <div className="">
-     {/* <Screen1 /> */}
+    <div className="bg-theme">
+     <Screen1 />
       {/* <CreditRentBoost/> */}
       {/* <PaymentForm/> */}
-      <Screen2/>
+      {/* <Screen2/> */}
     </div>
   );
 }

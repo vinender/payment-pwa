@@ -13,12 +13,12 @@ export default function Screen1() {
   };
 
   return (
-   <div className='relative bg-theme text-white flex flex-col max-w-3xl space-y-1 mx-auto '>
+   <div className='relative bg-theme text-white overflow-y-auto scrollbar-hidden  flex flex-col  max-w-3xl space-y-1 mx-2 lg:mx-auto '>
   <div className='flex items-center justify-between p-4'>
     <div className='flex items-center space-x-4'>
       <img className='w-[16px] h-[16px]' src='/back.png' alt='Back' />
       <p className='text-[14px] font-semibold font-poppins text-gray-50'>
-        Return to ASA Vault
+        return to ASA Vault
       </p>
     </div>
     <img className='w-[64px] h-[64px]' src='/pwa.png' alt='PWA' />

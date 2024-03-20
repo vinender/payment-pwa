@@ -13,7 +13,7 @@ export default function Screen2() {
   };
 
   return (
-    <div className='relative bg-theme flex overflow-y-scroll py-10 text-gray-100 flex-col max-w-3xl mx-auto border space-y-5 h-screen'>
+    <div className='relative bg-theme flex overflow-y-auto scrollbar-hidden scrollbar-hidden py-10 text-gray-100 flex-col max-w-3xl mx-2 lg:mx-auto  space-y-5 h-screen'>
       
       <div className='    flex items-center w-full justify-between '>
         <div className='flex items-center p-4 space-x-4'>
