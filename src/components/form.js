@@ -20,7 +20,7 @@ const PaymentForm = () => {
             <img className=' h-16 w-16 mx-6' src='/pwa.png' />
           </div>
   
-          <h2 className="text-white font-semibold font-poppins mt-10 text-[20px] mb-4">Improve my score!</h2>
+          <h2 className="text-white text-center font-semibold font-poppins mt-10 text-[20px] mb-4">Improve my score!</h2>
           
           <div className="flex bg-white/20 backdrop-blur-lg p-3 px-4 rounded-xl w-[85%] mx-auto justify-between items-center mb-4">
             <span className="text-white font-poppins font-medium">Purchase Summary</span>
