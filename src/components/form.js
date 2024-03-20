@@ -42,37 +42,37 @@ const PaymentForm = () => {
           </div>
   
           <div className="bg-  font-poppins rounded-lg p-4 w-full max-w-sm">
-            <p className='text-[16px] font-poppins text-center text-gray-200 font-medium'>Payment information not shared.</p>
+            <p className='text-[16px] font-poppins text-center text-white font-semibold'>Payment information not shared.</p>
   
             {isCardSelected ? (
-              <div className='grid grid-cols-1 mt-3 gap-4'>
+              <div className='  mt-3 gap-4'>
                 <input
-                  className=" bg-transparent border   border-purple-200 text-white   font-bold w-full mb-2 px-2 py-2 rounded-md"
+                  className=" bg-transparent  border-2 my-2 placeholder-white  font-poppins   border-purple-400 text-white   font-semibold w-full mb-2 px-3 py-3 rounded-md"
                   placeholder="Card Number"
                 />
                 <div className="flex mb-2">
                   <input
-                    className=" bg-transparent border   border-purple-200 text-white font-bold w-1/2 mr-2 px-2 py-2 rounded-md"
+                    className=" bg-transparent  border-2 my-2  placeholder-white  font-poppins  border-purple-400 text-white font-semibold w-1/2 mr-2 px-3 py-3 rounded-md"
                     placeholder="Expiration Date"
                   />
                   <input
-                    className=" bg-transparent border   border-purple-200 text-white font-bold w-1/2 px-2 py-2 rounded-md"
+                    className=" bg-transparent  border-2 my-2  placeholder-white  font-poppins  border-purple-400 text-white font-semibold w-1/2 px-3 py-3 rounded-md"
                     placeholder="CVV"
                   />
                 </div>
                 <input
-                  className=" bg-transparent border   border-purple-200 text-white font-bold w-full mb-2 px-2 py-2 rounded-md"
+                  className=" bg-transparent  border-2 my-2  placeholder-white  font-poppins  border-purple-400 text-white font-semibold w-full mb-2 px-3 py-3 rounded-md"
                   placeholder="Cardholder Name"
                 />
               </div>
             ) : (
-              <div className='grid grid-cols-1 gap-4 mt-3'>
+              <div className='  gap-4 mt-3'>
                 <input
-                  className=" bg-transparent border text-white  border-purple-200 font-bold w-full px-2 py-2 rounded-md"
+                  className=" bg-transparent  border-2 my-2  placeholder-white  font-poppins  border-purple-400 text-white   font-semibold w-full mb-2 px-3 py-3 rounded-md"
                   placeholder="Account Number"
                 />
                 <input
-                  className=" bg-transparent border   border-purple-200 text-white font-bold w-full px-2 py-2 rounded-md"
+                  className=" bg-transparent  border-2 my-2  placeholder-white  font-poppins  border-purple-400 text-white   font-semibold w-full mb-2 px-3 py-3 rounded-md"
                   placeholder="Routing Number"
                 />
               </div>
@@ -81,7 +81,7 @@ const PaymentForm = () => {
               Type your name here to sign digitally.
             </p>
             <input
-              className="bg-transparent border border-purple-200 text-white font-bold w-full mb-2 px-2 py-3 rounded"
+              className="bg-transparent border my-2 placeholder-white  border-purple-200 text-white font-semibold w-full mb-2 px-2 py-3 rounded"
               placeholder="Signature"
             />
           </div>

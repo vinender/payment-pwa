@@ -11,9 +11,9 @@ function App() {
   return (
     <div className="bg-theme">
      <Screen1 />
-      {/* <CreditRentBoost/> */}
-      {/* <PaymentForm/> */}
-      {/* <Screen2/> */}
+      <CreditRentBoost/>
+      <PaymentForm/>
+      <Screen2/>
     </div>
   );
 }

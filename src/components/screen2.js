@@ -13,7 +13,7 @@ export default function Screen2() {
   };
 
   return (
-    <div className='relative bg-theme flex overflow-y-auto scrollbar-hidden scrollbar-hidden py-10 text-gray-100 flex-col max-w-3xl mx-2 lg:mx-auto  space-y-5 h-screen'>
+    <div className='relative py-4 bg-theme text-white overflow-y-auto   scrollbar-hidden  flex flex-col h-screen  w-full space-y-1  lg:mx-auto '>
       
       <div className='    flex items-center w-full justify-between '>
         <div className='flex items-center p-4 space-x-4'>
@@ -64,23 +64,21 @@ export default function Screen2() {
             </div>
         </div>
 
-   
-
-
       </div>
 
-      <Card1 />
+      <Card1/>
+
       <Card2/>
 
       {/* <div className='mx'> */}
-        <p className='  mx-auto   text-center text-sm font-poppins'>
+       <p className='  mx-auto md:w-[20%] w-[80%] py-4   text-center text-sm font-poppins'>
                The information provided will be shared with 
                Credit Rent Boost to help improve your credit score.
         </p>
         {/* </div> */}
 
         <button  style={{borderRadius: '32.5px'}} 
-                 className='  font-semibold  p-4 mx-3  w-ull bg-white text-theme 
+                 className='  font-semibold sm:w-[60%] md:w-[35%] lg:w-[20%] w-[80%] p-4 mx-auto  w-ull bg-white text-theme 
                             h-[58]'>
                         Continue
         </button>
