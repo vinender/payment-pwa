@@ -71,14 +71,14 @@ const MobileSubscriptionScreen = () => {
           <img className=' cursor-pointer w-[16px] h-[16px]' src='/back.png' alt='Back' />
            {/* </div> */}
           
-          <h1 className="text-[22px] font-bold text-emerald-50 font-poppins w-[255px]">Love & Money, Finally in Sync.</h1>
+          <h1 className="text-[15px] xs:text-[18px] sm:text-[22px] font-bold text-emerald-50 font-poppins w-[255px]">Love & Money, Finally in Sync.</h1>
           <img className=' h-16 w-16 mx-6' src='/pwa.png' />
 
         </div>
 
         <img src='./demo/flash.png' className='relative -top-2 left-5 z-50 w-[80px] h-[80px]' />
         
-        <div className=" bg-white text-gray-800 rounded-t-[2rem] min-w-[300px] max-w-[600px] absolute  bottom-0 left-0 right-0 h-[calc(100%-120px)] overflow-y-auto">
+        <div className=" bg-emerald-100 text-gray-800 mx-auto rounded-t-[2rem] min-w-[300px] max-w-[600px] absolute  bottom-0 left-0 right-0 h-[calc(100%-120px)] overflow-y-auto">
           <div className="bg-white  h-full p-6  shadow-lg">
             <div className="flex items-center mb-6">
             <img src='./demo/flash.png' className='relative -top-2 hidden left-5 z-50 w-[80px] h-[80px]' />
