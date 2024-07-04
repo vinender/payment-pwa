@@ -63,7 +63,7 @@ const MobileSubscriptionScreen = () => {
 
   return (
     <div className="  bg-gray-900 flex justify-center items-center min-h-screen">
-      <div className="bg-[#1B9C83] w-full max-w-[650px] h-[900px] overflow-y-auto text-white relative z-20">
+      <div className="bg-[#1B9C83] w-full  h-screen overflow-y-auto text-white relative z-20">
         
         <div className="flex items-center justify-evenly space-x-8 pt-8 p-3 ">
 
@@ -71,14 +71,14 @@ const MobileSubscriptionScreen = () => {
           <img className=' cursor-pointer w-[16px] h-[16px]' src='/back.png' alt='Back' />
            {/* </div> */}
           
-          <h1 className="text-[15px] xs:text-[18px] sm:text-[22px] font-bold text-emerald-50 font-poppins w-[255px]">Love & Money, Finally in Sync.</h1>
+          <h1 className="text-[15px] xs:text-[18px] sm:text-[22px] font-bold text-emerald-50 font-poppins w-full">Love & Money, Finally in Sync.</h1>
           <img className=' h-16 w-16 mx-6' src='/pwa.png' />
 
         </div>
 
         <img src='./demo/flash.png' className='relative -top-2 left-5 z-50 w-[80px] h-[80px]' />
         
-        <div className=" bg-emerald-100 text-gray-800 mx-auto rounded-t-[2rem] min-w-[300px] max-w-[600px] absolute  bottom-0 left-0 right-0 h-[calc(100%-120px)] overflow-y-auto">
+        <div className=" bg-emerald-100 text-gray-800 mx-auto rounded-t-[2rem]  absolute  bottom-0 left-0 right-0 h-[calc(100%-120px)] overflow-y-auto">
           <div className="bg-white  h-full p-6  shadow-lg">
             <div className="flex items-center mb-6">
             <img src='./demo/flash.png' className='relative -top-2 hidden left-5 z-50 w-[80px] h-[80px]' />
@@ -87,9 +87,9 @@ const MobileSubscriptionScreen = () => {
 
             <div className='  border-[3.91px]   border-[#1B9C83] rounded-xl'>
                 <div className='rounded-xl bg-emerald-100 p'> 
-                    {/* <button className="bg-emerald-100 border text-black border-green-800   px-4 py-2 rounded-full border-b-4 text-sm font-bold mb-6">
+                    <button className="bg-emerald-100 border text-black border-green-800  relative top-5 left-5 px-4 py-2 rounded-full border-b-4 text-sm font-bold mb-6">
                     SUBSCRIBE
-                    </button> */}
+                    </button>
 
                     {/* <div className="bg-emerald-1200 p-6   mb-6 overflow-x-auto"> */}
                     <ImageTextSlider slides={slides} />
@@ -122,8 +122,8 @@ const MobileSubscriptionScreen = () => {
 
 
             </div>
-            <p className="text-[13px] max-w-[346px] h-[40px] font-semibold text-left mt-6 mb-4 text-gray-900 px-6">
-            By continuing, you are indicating that you accept our Terms of Service and Privacy Policy.
+            <p className="text-[13px] w-full h-[40px] font-semibold text-left mt-6 mb-4 text-gray-900 px-6">
+            By continuing, you are indicating that you accept our <span className='underline'>Terms of Service</span>  and <span className='underline'>Privacy Policy</span> .
           </p>
           </div>
           
