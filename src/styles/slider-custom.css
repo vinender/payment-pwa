@@ -1,0 +1,23 @@
+/* Change the color and size of the dots */
+.slick-dots li button:before {
+  color: gray; /* Change this to your desired color */
+  font-size: 12px; /* Increase this value to make the dots bigger */
+}
+
+/* Change the color and size of the active dot */
+.slick-dots li.slick-active button:before {
+  color: rgb(5, 173, 131); /* Change this to your desired active color */
+  font-size: 12px; /* Increase this value to make the active dot bigger */
+}
+
+/* Additional styling for custom dots */
+.dot-custom {
+  width: 8px; /* Increase this value to make the dots bigger */
+  height: 8px; /* Increase this value to make the dots bigger */
+  border-radius: 50%; /* To make them round */
+  background-color: white; /* Change this to your desired color */
+}
+
+.slick-dots li.slick-active .dot-custom {
+  background-color: rgb(27, 156, 131); /* Change this to your desired active color */
+}
