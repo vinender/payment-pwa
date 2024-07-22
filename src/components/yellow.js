@@ -2,34 +2,55 @@ import React, { useState, useRef, useEffect } from 'react';
 
 const CustomSlider = ({ slides }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [startX, setStartX] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
-  const [dragOffset, setDragOffset] = useState(0);
   const sliderRef = useRef(null);
+  const startXRef = useRef(0);
+  const dragOffsetRef = useRef(0);
+  const [dragOffset, setDragOffset] = useState(0);
 
   const handleStart = (clientX) => {
-    setStartX(clientX);
+    startXRef.current = clientX;
     setIsDragging(true);
+    console.log('drag started');
   };
 
   const handleMove = (clientX) => {
     if (!isDragging) return;
-    const diff = startX - clientX;
-    setDragOffset(diff);
+    const diff = startXRef.current - clientX;
+    dragOffsetRef.current = diff;
+    console.log('Dragging, offset:', diff);
   };
 
   const handleEnd = () => {
     if (!isDragging) return;
-    const threshold = sliderRef.current.offsetWidth / 4;
-    if (Math.abs(dragOffset) > threshold) {
-      if (dragOffset > 0 && currentSlide < slides.length - 1) {
+    console.log('is DRAGGING', isDragging);
+    console.log('Drag ended, final offset:', dragOffsetRef.current);
+
+    const threshold = sliderRef.current.offsetWidth / 3;
+    console.log('threshold', threshold);
+    console.log('dragOffset', dragOffsetRef.current);
+    console.log('dragOffset > threshold', Math.abs(dragOffsetRef.current) > threshold);
+
+    if (Math.abs(dragOffsetRef.current) > threshold) {
+      if (dragOffsetRef.current > 0 && currentSlide < slides.length - 1) {
         setCurrentSlide(prev => prev + 1);
-      } else if (dragOffset < 0 && currentSlide > 0) {
+        console.log('Moving to next slide');
+      } else if (dragOffsetRef.current < 0 && currentSlide > 0) {
         setCurrentSlide(prev => prev - 1);
+        console.log('Moving to previous slide');
+      } else {
+        console.log('At the end of slides, cannot move further');
       }
+    } else {
+      console.log('Drag distance not enough to change slide');
     }
+
     setIsDragging(false);
-    setDragOffset(0);
+    dragOffsetRef.current = 0;
+  };
+
+  const handleDotClick = (index) => {
+    setCurrentSlide(index);
   };
 
   useEffect(() => {
@@ -37,13 +58,13 @@ const CustomSlider = ({ slides }) => {
     
     const touchStart = (e) => handleStart(e.touches[0].clientX);
     const touchMove = (e) => {
-      e.preventDefault(); // Prevent scrolling while dragging
+      e.preventDefault();
       handleMove(e.touches[0].clientX);
     };
     const mouseDown = (e) => handleStart(e.clientX);
     const mouseMove = (e) => {
       if (isDragging) {
-        e.preventDefault(); // Prevent selecting text while dragging
+        e.preventDefault();
         handleMove(e.clientX);
       }
     };
@@ -66,31 +87,48 @@ const CustomSlider = ({ slides }) => {
     };
   }, [isDragging, slides.length]);
 
+
   return (
     <div 
       ref={sliderRef}
-      className="relative w-full h-64 text-black overflow-hidden touch-none"
+      className="relative w-full bg-yellow-50 mt-12 border-4 border-yellow-400 rounded-lg overflow-hidden touch-none"
     >
+      {/* Fixed GOLD button */}
+      <div className="absolute top-2 left-2 z-10">
+        <img src='./demo/gold.jpeg' className="object-contain w-20 h-20 mb-4"/>
+      </div>
+
+      {/* Sliding content */}
       <div 
-        className="flex h-full transition-transform duration-300 ease-out"
+        className="flex transition-transform relative -top-8 duration-300 w-full ease-out py-4"
         style={{ 
-          transform: `translateX(calc(-${currentSlide * 100}% - ${dragOffset}px))`,
+          transform: `translateX(calc(-${currentSlide * 100}% - ${isDragging ? dragOffset : 0}px))`,
           transition: isDragging ? 'none' : 'transform 300ms ease-out'
         }}
       >
         {slides.map((slide, index) => (
-          <div key={index} className="w-full h-full flex-shrink-0 flex flex-col items-center justify-center p-4">
-            <img src={slide.icon} alt="" className="object-contain mb-4 h-[50%] w-[50%] " />
-            <h3 className="text-xl font-bold mb-2">{slide.title}</h3>
-            <p className="text-sm">{slide.description}</p>
+          <div key={index} className="w-full flex-shrink-0 flex flex-col items-center justify-center p-4">
+            <img src={slide.icon} alt="" className="w-full h-42 bg-yellow-200 object-contain mb-4" />
+            <h3 className="text-lg sm:text-xl font-poppins font-semibold mb-2 text-black text-left">{slide.title}</h3>
+            <p className="text-xs sm:text-sm text-gray-800 font-poppins text-left">{slide.description}</p>
           </div>
         ))}
       </div>
-      <div className="absolute bottom-2 left-0 right-0 flex justify-center space-x-2">
+
+      {/* Fixed CONTINUE button */}
+      <div className="p-2 bottom-2 left- mx-auto right-4 z-10">
+        <button className="w-full mx-auto bg-yellow-500 text-white font-bold py-2 rounded-lg">
+          CONTINUE
+        </button>
+      </div>
+
+      {/* Slide indicators */}
+      <div className="absolute bottom-16 left-0 right-0 flex justify-center space-x-2">
         {slides.map((_, index) => (
           <div
             key={index}
-            className={`w-2 h-2 rounded-full ${
+            onClick={() => handleDotClick(index)}
+            className={`w-2 h-2 rounded-full cursor-pointer ${
               index === currentSlide ? 'bg-yellow-500' : 'bg-gray-300'
             }`}
           />
@@ -99,6 +137,7 @@ const CustomSlider = ({ slides }) => {
     </div>
   );
 };
+
 
 const MobileSubscriptionScreen = () => {
   const slides = [
@@ -134,22 +173,22 @@ const MobileSubscriptionScreen = () => {
         
         <div className=" relative bg-white rounded-t-3xl mt-4 p-6 h-[calc(100%-6rem)]">
           <div className="flex items-center mb-6">
-            <img alt='guac' src='./demo/guac.jpeg' className='absolute -top-4  bg-white opacity-90 left-5 z-50 w-16 h-16' />
-            <span className="absolute left-20 font-semibold text-xl text-black ml-4">Guac</span>
+            <img alt='guac' src='./demo/guac.jpeg' className='absolute -top-4  bg-white opacity-90 left-5 z-50 w-20 h-20' />
+            <span className="absolute left-24 font-semibold text-xl text-black ml-4">Guac</span>
           </div>
           
-          <div className='border-4 border-yellow-400 rounded-xl mt-10 overflow-hidden'>
+          {/* <div className='border-4 border-yellow-400 rounded-xl mt-12 overflow-hidden'>
             <div className='bg-yellow-100 p-4'>
-              <img src='./demo/gold.jpeg' className="object-contain w-20 h-20 mb-4"/>
+              <img src='./demo/gold.jpeg' className="object-contain w-20 h-20 mb-4"/> */}
                 
               <CustomSlider slides={slides} />
-              <button className="w-full bg-yellow-500 text-white font-bold py-2 rounded-lg mt-4">
+              {/* <button className="w-full bg-yellow-500 text-white font-bold py-2 rounded-lg mt-4">
                 CONTINUE
               </button>
             </div>
-          </div>
+          </div> */}
           
-          <div className='mt-6 text-left space-y-3 shadow-2xl shadow-slate-500 p-5 rounded-xl'>
+          <div className='mt-4 sm:mt-6 text-left space-y-3 shadow-2xl shadow-slate-500 p-5 rounded-xl'>
             <span className='inline-flex items-center rounded-full border   bg-green-100 px-2 py-1'>
               <img className='object-contain w-20  mr-1' src='./demo/green.jpeg' alt="Green" />
               {/* <p className='text-xs font-semibold text-black'>GREEN</p> */}
