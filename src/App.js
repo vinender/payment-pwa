@@ -4,7 +4,7 @@ import CreditRentBoost from './components/rent-boost';
 import PaymentForm from './components/form';
 import Screen2 from './components/screen2';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import MobileSubscriptionScreen from './components/green';
+import MobileSubscriptionScreen from './components/yellow';
 
 function App() {
   return (

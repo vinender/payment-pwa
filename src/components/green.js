@@ -84,9 +84,12 @@ const MobileSubscriptionScreen = () => {
 
 
                 </div>
-              <p className="text-[13px] w-full h- font-semibold text-left mt-2 sm:mt-6 lg:mt-4 mb-4 text-gray-900 px-1 sm:px-3">
-                By continuing, you are indicating that you accept our <span className='underline'>Terms of Service</span>  and <span className='underline'>Privacy Policy</span> .
-              </p>
+               <p className="text-[13px] w-full h- font-semibold text-left mt-2 sm:mt-6 lg:mt-4 mb-4 text-gray-900 px-1 sm:px-3">
+                   By continuing, you are indicating that you accept our 
+                  <span className='underline'>Terms of Service</span>  
+                   and 
+                  <span className='underline'>Privacy Policy</span> .
+               </p>
           </div>
           
           {/* <p className="text-xs text-center mt-6 mb-4 text-gray-500 px-6">
