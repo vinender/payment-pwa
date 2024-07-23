@@ -186,7 +186,7 @@ const MobileSubscriptionScreen = () => {
         <div className="flex-grow relative bg-white rounded-t-3xl p-6 flex flex-col">
           <div className="relative mb-2">
             <img alt='guac' src='./demo/guac.png' className='absolute -top-12 opacity-90 left-0 z-50 w-20 h-20' />
-            <span className="absolute left-24 top-0 font-semibold text-xl text-black">Guac</span>
+            <span className="absolute left-24 -top-4 font-semibold text-xl text-black">Guac</span>
           </div>
           
           <div className="flex-grow flex flex-col justify-between">
