@@ -93,7 +93,7 @@ const CustomSlider = ({ slides }) => {
     style={{
         boxShadow: '0 4px 4px 0 rgba(0, 0, 0, 0.25)'
       }}
-      className="relative w-full bg-[#EBECF0] border-2 border-yellow-400 rounded-2xl overflow-hidden touch-none flex flex-col h-auto mt-8" // Added mt-8 for top margin
+      className="relative w-full bg-[#EBECF0] border-[3.5px] border-yellow-500 rounded-2xl overflow-hidden touch-none flex flex-col h-auto mt-8" // Added mt-8 for top margin
     >
       {/* Fixed GOLD button */}
       <div className="absolute top-2 left-2 z-10">
@@ -176,7 +176,7 @@ const MobileSubscriptionScreen = () => {
     <div className="bg-[#1837b3] flex justify-center items-center overflow-y-hidden h-screen">
       <div className="w-full h-full flex flex-col bg-custom-gradient text-white relative z-20">
         <div className="flex items-center justify-between p-4">
-          <span className='bg-button-gradient rounded-lg h-7 shadow-2xl text-center w-7'>
+          <span className='bg-button-gradient rounded-lg h-8 shadow-2xl  text-center w-8'>
              <img alt='back' className='cursor-pointer p-2 shadow-2xl   rounded-lg w-7 h-7' src='/back.png' />
           </span>
           <h1 className="text-sm font-bold text-white">Achieve more with Guac Gold!</h1>
@@ -185,7 +185,7 @@ const MobileSubscriptionScreen = () => {
         
         <div className="flex-grow relative bg-[#EBECF0] rounded-t-3xl p-6 flex flex-col">
           <div className="relative mb-2">
-            <img alt='guac' src='./demo/guac.png' className='absolute -top-12 opacity-90 left-0 z-50 w-20 h-20' />
+            <img alt='guac' src='./demo/guac.png' className='absolute -top-10 opacity-90 left-0 z-50 w-20 h-20' />
             <span className="absolute left-24 -top-4 font-semibold text-xl text-black">Guac</span>
           </div>
           
@@ -194,7 +194,7 @@ const MobileSubscriptionScreen = () => {
               <CustomSlider slides={slides} />
             </div>
             
-            <div className=' text-left mt-6 space-y-3 shadow-2xl shadow-slate-500 p-3 rounded-xl'>
+            <div className=' text-left mt-6 space-y-4 shadow-2xl shadow-slate-500 p-5 rounded-xl'>
               <span className='inline-flex items-center rounded-full border bg-green-100 px-2 py-1'>
                 <img className='object-contain w-16 mr-1' src='./demo/green.png' alt="Green" />
               </span>
