@@ -9,7 +9,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         'custom-gradient': 'linear-gradient(180deg, #3AB100 0%, #BAE101 100%)',
-        'button-gradient': 'linear-gradient(120deg, #3AB100 8%, #BAE101 70%)',
+        'button-gradient': 'linear-gradient(120deg, #3AB600 8%, #BAE101 70%)',
       },
       typography: (theme) => ({
         'h1': {
