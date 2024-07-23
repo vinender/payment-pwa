@@ -110,7 +110,7 @@ const CustomSlider = ({ slides }) => {
           }}
         >
           {slides.map((slide, index) => (
-            <div key={index} className="w-full flex-shrink-0 flex justify-center items-center">
+            <div key={index} className="w-full flex-shrink-0 flex  p-4 justify-center items-center">
               <img src={slide.icon} alt="" className="max-w-full h-full object-contain" />
             </div>
           ))}
