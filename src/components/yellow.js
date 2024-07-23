@@ -93,7 +93,7 @@ const CustomSlider = ({ slides }) => {
     style={{
         boxShadow: '0 4px 4px 0 rgba(0, 0, 0, 0.25)'
       }}
-      className="relative w-full bg-[#EBECF0] border-2 border-yellow-400 rounded-2xl overflow-hidden touch-none flex flex-col h-full mt-8" // Added mt-8 for top margin
+      className="relative w-full bg-[#EBECF0] border-2 border-yellow-400 rounded-2xl overflow-hidden touch-none flex flex-col h-auto mt-8" // Added mt-8 for top margin
     >
       {/* Fixed GOLD button */}
       <div className="absolute top-2 left-2 z-10">
@@ -101,7 +101,7 @@ const CustomSlider = ({ slides }) => {
       </div>
 
       {/* Image container */}
-      <div className="w-full bg-[#FBEFCF] p-4 flex-shrink-0" style={{ height: '40%' }} >
+      <div className="w-full bg-[#FBEFCF]   p-4 flex-shrink-0" style={{ height: '250px' }} >
         <div 
           className="flex transition-transform duration-300 ease-out h-full"
           style={{ 
@@ -118,12 +118,12 @@ const CustomSlider = ({ slides }) => {
       </div>
 
       {/* Text and button container */}
-      <div className="flex-grow flex flex-col bg-yellow-50 justify-between p-4">
-        <div className='overflow-y-auto'>
+      <div className=" flex flex-col overflow-y-hidden h-auto  bg-yellow-50 justify-between p-4">
+        <div className='overflow-y-auto ' >
           <h3 className="text-lg font-bold mb-2 text-black">
             {slides[currentSlide].title}
           </h3>
-          <p className="text-sm text-gray-700">
+          <p className="text-sm text-gray-700 h-20 ">
             {slides[currentSlide].description}
           </p>
         </div>
@@ -173,7 +173,7 @@ const MobileSubscriptionScreen = () => {
   ];      
 
   return (
-    <div className="bg-[#EBECF0] flex justify-center items-center h-screen">
+    <div className="bg-[#EBECF0] flex justify-center items-center overflow-y-hidden h-screen">
       <div className="w-full h-full flex flex-col bg-custom-gradient text-white relative z-20">
         <div className="flex items-center justify-between p-4">
           <span className='bg-button-gradient rounded-lg h-7 shadow-2xl text-center w-7'>
@@ -189,12 +189,12 @@ const MobileSubscriptionScreen = () => {
             <span className="absolute left-24 -top-4 font-semibold text-xl text-black">Guac</span>
           </div>
           
-          <div className="flex-grow flex flex-col justify-between">
+          <div className=" flex flex-col justify- ">
             <div className="flex-grow">
               <CustomSlider slides={slides} />
             </div>
             
-            <div className='mt-4 text-left space-y-3 shadow-2xl shadow-slate-500 p-3 rounded-xl'>
+            <div className=' text-left mt-6 space-y-3 shadow-2xl shadow-slate-500 p-3 rounded-xl'>
               <span className='inline-flex items-center rounded-full border bg-green-100 px-2 py-1'>
                 <img className='object-contain w-16 mr-1' src='./demo/green.png' alt="Green" />
               </span>
