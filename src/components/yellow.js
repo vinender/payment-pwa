@@ -87,52 +87,66 @@ const CustomSlider = ({ slides }) => {
     };
   }, [isDragging, slides.length]);
 
-
   return (
     <div 
-      ref={sliderRef}
-      className="relative w-full bg-yellow-50 mt-12 border-4 border-yellow-400 rounded-lg overflow-hidden touch-none"
+    ref={sliderRef}
+    style={{
+        boxShadow: '0 4px 4px 0 rgba(0, 0, 0, 0.25)'
+      }}
+      className="relative w-full bg-[#EBECF0] border-2 border-yellow-400 rounded-2xl overflow-hidden touch-none flex flex-col h-full mt-8" // Added mt-8 for top margin
     >
       {/* Fixed GOLD button */}
       <div className="absolute top-2 left-2 z-10">
-        <img src='./demo/gold.jpeg' className="object-contain w-20 h-20 mb-4"/>
+        <img src='./demo/gold.png' className="object-contain w-16 h-16"/>
       </div>
 
-      {/* Sliding content */}
-      <div 
-        className="flex transition-transform relative -top-8 duration-300 w-full ease-out py-4"
-        style={{ 
-          transform: `translateX(calc(-${currentSlide * 100}% - ${isDragging ? dragOffset : 0}px))`,
-          transition: isDragging ? 'none' : 'transform 300ms ease-out'
-        }}
-      >
-        {slides.map((slide, index) => (
-          <div key={index} className="w-full flex-shrink-0 flex flex-col items-center justify-center p-4">
-            <img src={slide.icon} alt="" className="w-full h-42 bg-yellow-200 object-contain mb-4" />
-            <h3 className="text-lg sm:text-xl font-poppins font-semibold mb-2 text-black text-left">{slide.title}</h3>
-            <p className="text-xs sm:text-sm text-gray-800 font-poppins text-left">{slide.description}</p>
-          </div>
-        ))}
+      {/* Image container */}
+      <div className="w-full bg-[#FBEFCF] p-4 flex-shrink-0" style={{ height: '40%' }} >
+        <div 
+          className="flex transition-transform duration-300 ease-out h-full"
+          style={{ 
+            transform: `translateX(calc(-${currentSlide * 100}% - ${isDragging ? dragOffset : 0}px))`,
+            transition: isDragging ? 'none' : 'transform 300ms ease-out'
+          }}
+        >
+          {slides.map((slide, index) => (
+            <div key={index} className="w-full flex-shrink-0 flex justify-center items-center">
+              <img src={slide.icon} alt="" className="max-w-full h-full object-contain" />
+            </div>
+          ))}
+        </div>
       </div>
 
-      {/* Fixed CONTINUE button */}
-      <div className="p-2 bottom-2 left- mx-auto right-4 z-10">
-        <button className="w-full mx-auto bg-yellow-500 text-white font-bold py-2 rounded-lg">
+      {/* Text and button container */}
+      <div className="flex-grow flex flex-col bg-yellow-50 justify-between p-4">
+        <div className='overflow-y-auto'>
+          <h3 className="text-lg font-bold mb-2 text-black">
+            {slides[currentSlide].title}
+          </h3>
+          <p className="text-sm text-gray-700">
+            {slides[currentSlide].description}
+          </p>
+        </div>
+
+        {/* Slide indicators */}
+        <div className="flex justify-center space-x-2 my-4">
+          {slides.map((_, index) => (
+            <div
+              key={index}
+              onClick={() => handleDotClick(index)}
+              className={`w-2 h-2 rounded-full cursor-pointer ${
+                index === currentSlide ? 'bg-[#EBAE11]' : 'bg-gray-300'
+              }`}
+            />
+          ))}
+        </div>
+
+        {/* CONTINUE button */}
+        <button className="w-full bg-[#EBAE11] text-white font-bold py-3 rounded-lg shadow-md" style={{
+          boxShadow: '0 4px 4px 0 rgba(0, 0, 0, 0.25)'
+        }}>
           CONTINUE
         </button>
-      </div>
-
-      {/* Slide indicators */}
-      <div className="absolute bottom-16 left-0 right-0 flex justify-center space-x-2">
-        {slides.map((_, index) => (
-          <div
-            key={index}
-            onClick={() => handleDotClick(index)}
-            className={`w-2 h-2 rounded-full cursor-pointer ${
-              index === currentSlide ? 'bg-yellow-500' : 'bg-gray-300'
-            }`}
-          />
-        ))}
       </div>
     </div>
   );
@@ -142,7 +156,7 @@ const CustomSlider = ({ slides }) => {
 const MobileSubscriptionScreen = () => {
   const slides = [
     {
-      icon: './demo/mobile.jpeg',
+      icon: './demo/mobile.png',
       title: 'Move your money faster!',
       description: 'Withdraw funds from your Goals to Bank the same day for Free! Guac Gold includes 2 Free Rapid Withdrawals with absolutely no fees (normally 1.5%).',
     },
@@ -156,46 +170,38 @@ const MobileSubscriptionScreen = () => {
       title: 'Monitor and Build Credit!',
       description: 'Stay on Track with access to real-time Credit Scores and Improve your Credit with Exclusive Access to Pre-Qualified Personal Loans and Offers!',
     },
-  ];
+  ];      
 
   return (
-    <div className="bg-gray-900 flex justify-center items-center h-screen">
-      <div className="w-full h-screen overflow-y-auto bg-custom-gradient text-white relative z-20" 
-      // style={{ background: 'linear-gradient(180deg, #3AB100 0%, #BAE101 100%)' }}
-      >
-        <div className="flex items-center justify-evenly space-x-3 p-4">
-          <span className='bg-button-gradient rounded-lg h-7 shadow-2xl  text-center w-7'>
-             <img alt='back' className='cursor-pointer p-2 shadow-2xl shadow-slate-700   rounded-lg w-7 h-7' src='/back.png' />
+    <div className="bg-[#EBECF0] flex justify-center items-center h-screen">
+      <div className="w-full h-full flex flex-col bg-custom-gradient text-white relative z-20">
+        <div className="flex items-center justify-between p-4">
+          <span className='bg-button-gradient rounded-lg h-7 shadow-2xl text-center w-7'>
+             <img alt='back' className='cursor-pointer p-2 shadow-2xl shadow-slate-700 rounded-lg w-7 h-7' src='/back.png' />
           </span>
           <h1 className="text-sm font-bold text-white">Achieve more with Guac Gold!</h1>
-          <img alt='pwa' className=' h-16 w-16 mx-6' src='/pwa.png' />
+          <img alt='pwa' className='h-16 w-16' src='/pwa.png' />
         </div>
         
-        <div className=" relative bg-white rounded-t-3xl mt-4 p-6 h-[calc(100%-6rem)]">
-          <div className="flex items-center mb-6">
-            <img alt='guac' src='./demo/guac.jpeg' className='absolute -top-4  bg-white opacity-90 left-5 z-50 w-20 h-20' />
-            <span className="absolute left-24 font-semibold text-xl text-black ml-4">Guac</span>
+        <div className="flex-grow relative bg-white rounded-t-3xl p-6 flex flex-col">
+          <div className="relative mb-2">
+            <img alt='guac' src='./demo/guac.png' className='absolute -top-12 opacity-90 left-0 z-50 w-20 h-20' />
+            <span className="absolute left-24 top-0 font-semibold text-xl text-black">Guac</span>
           </div>
           
-          {/* <div className='border-4 border-yellow-400 rounded-xl mt-12 overflow-hidden'>
-            <div className='bg-yellow-100 p-4'>
-              <img src='./demo/gold.jpeg' className="object-contain w-20 h-20 mb-4"/> */}
-                
+          <div className="flex-grow flex flex-col justify-between">
+            <div className="flex-grow">
               <CustomSlider slides={slides} />
-              {/* <button className="w-full bg-yellow-500 text-white font-bold py-2 rounded-lg mt-4">
-                CONTINUE
-              </button>
             </div>
-          </div> */}
-          
-          <div className='mt-4 sm:mt-6 text-left space-y-3 shadow-2xl shadow-slate-500 p-5 rounded-xl'>
-            <span className='inline-flex items-center rounded-full border   bg-green-100 px-2 py-1'>
-              <img className='object-contain w-20  mr-1' src='./demo/green.jpeg' alt="Green" />
-              {/* <p className='text-xs font-semibold text-black'>GREEN</p> */}
-            </span>
-            <p className="text-xs font-medium text-gray-500">
-              You will be moved to Guac Green if you don't upgrade within 30 days.
-            </p>
+            
+            <div className='mt-4 text-left space-y-3 shadow-2xl shadow-slate-500 p-3 rounded-xl'>
+              <span className='inline-flex items-center rounded-full border bg-green-100 px-2 py-1'>
+                <img className='object-contain w-16 mr-1' src='./demo/green.png' alt="Green" />
+              </span>
+              <p className="text-xs font-medium text-gray-500">
+                You will be moved to Guac Green if you don't upgrade within 30 days.
+              </p>
+            </div>
           </div>
         </div>
       </div>
