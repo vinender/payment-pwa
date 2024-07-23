@@ -118,12 +118,12 @@ const CustomSlider = ({ slides }) => {
       </div>
 
       {/* Text and button container */}
-      <div className=" flex flex-col overflow-y-hidden h-auto  bg-yellow-50 justify-between p-4">
+      <div className=" flex flex-col overflow-y-hidden h-auto sm:h-60  bg-yellow-50 justify-between p-4">
         <div className='overflow-y-auto ' >
           <h3 className="text-lg font-bold mb-2 text-black">
             {slides[currentSlide].title}
           </h3>
-          <p className="text-sm text-gray-700 h-20 ">
+          <p className="text-sm text-gray-700  ">
             {slides[currentSlide].description}
           </p>
         </div>
