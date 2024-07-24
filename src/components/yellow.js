@@ -173,17 +173,17 @@ const MobileSubscriptionScreen = () => {
   ];      
 
   return (
-    <div className="bg-[#1837b3] flex justify-center items-center overflow-y-hidden h-screen">
-      <div className="w-full h-full flex flex-col bg-custom-gradient text-white relative z-20">
+    <div className="bg-[#1837b3] flex justify-center items-center overflo h-screen">
+    <div className="w-full h-full flex flex-col bg-custom-gradient text-white relative z-20">
         <div className="flex items-center justify-between p-4">
-          <span className='bg-button-gradient rounded-lg h-8 shadow-2xl  text-center w-8'>
+          <span className='bg-[#5ece26] rounded-lg h-8 shadow-2xl  text-center w-8'>
              <img alt='back' className='cursor-pointer p-2 shadow-2xl   rounded-lg w-7 h-7' src='/back.png' />
           </span>
           <h1 className="text-sm font-bold text-white">Achieve more with Guac Gold!</h1>
           <img alt='pwa' className='h-16 w-16' src='/pwa.png' />
         </div>
         
-        <div className="flex-grow relative bg-[#EBECF0] rounded-t-3xl p-6 flex flex-col">
+        <div className="flex-grow relative bg-[#EBECF0] rounded-t-3xl mt-6 p-6 flex flex-col">
           <div className="relative mb-2">
             <img alt='guac' src='./demo/guac.png' className='absolute -top-10 opacity-90 left-0 z-50 w-20 h-20' />
             <span className="absolute left-24 -top-4 font-semibold text-xl text-black">Guac</span>
