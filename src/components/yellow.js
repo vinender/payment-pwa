@@ -101,7 +101,7 @@ const CustomSlider = ({ slides }) => {
       </div>
 
       {/* Image container */}
-      <div className="w-full bg-[#FBEFCF]   p-4 flex-shrink-0" style={{ height: '250px' }} >
+      <div className="w-full bg-[#FBEFCF]   p-4 flex-shrink-0" style={{ height: '193px' }} >
         <div 
           className="flex transition-transform duration-300 ease-out h-full"
           style={{ 
@@ -111,14 +111,14 @@ const CustomSlider = ({ slides }) => {
         >
           {slides.map((slide, index) => (
             <div key={index} className="w-full flex-shrink-0 flex  p-4 justify-center items-center">
-              <img src={slide.icon} alt="" className="max-w-full h-full object-contain" />
+              <img src={slide.icon} alt="" className="w-full h-44 object-contain" />
             </div>
           ))}
         </div>
       </div>
 
       {/* Text and button container */}
-      <div className=" flex flex-col overflow-y-hidden h-auto sm:h-60  bg-yellow-50 justify-between p-4">
+      <div className=" flex flex-col overflow-y-hidden h-60 sm:h-60  bg-yellow-50 justify-between p-4">
         <div className='overflow-y-auto ' >
           <h3 className="text-lg font-bold mb-2 text-black">
             {slides[currentSlide].title}
@@ -166,7 +166,7 @@ const MobileSubscriptionScreen = () => {
       description: 'Upgrade to Guac Gold & Save for Multiple Goals at the same time.',
     },
     {
-      icon: './demo/slider2.jpeg',
+      icon: './demo/slider1.jpeg',
       title: 'Monitor and Build Credit!',
       description: 'Stay on Track with access to real-time Credit Scores and Improve your Credit with Exclusive Access to Pre-Qualified Personal Loans and Offers!',
     },
